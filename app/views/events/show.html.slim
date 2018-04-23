@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @event.title
+p
+  strong Date:
+  = @event.date
+p
+  strong Min member:
+  = @event.min_member
+p
+  strong Max member:
+  = @event.max_member
+p
+  strong Max group member:
+  = @event.max_group_member
+p
+  strong Description:
+  = @event.description
+
+=> link_to 'Edit', edit_event_path(@event)
+'|
+=< link_to 'Back', events_path
