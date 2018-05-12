@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Event:
+  = @participation.event
+p
+  strong User:
+  = @participation.user
+
+=> link_to 'Edit', edit_participation_path(@participation)
+'|
+=< link_to 'Back', participations_path
