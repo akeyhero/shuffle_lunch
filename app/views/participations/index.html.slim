@@ -11,8 +11,8 @@ table
   tbody
     - @participations.each do |participation|
       tr
-        td = participation.event
-        td = participation.user
+        td = participation.event.title
+        td = participation.user.nickname
         td = link_to 'Show', participation
         td = link_to 'Destroy', participation, data: { confirm: 'Are you sure?' }, method: :delete
 

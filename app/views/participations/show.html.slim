@@ -2,9 +2,9 @@ p#notice = notice
 
 p
   strong Event:
-  = @participation.event
+  = @participation.event.title
 p
   strong User:
-  = @participation.user
+  = @participation.user.nickname
 
 =< link_to 'Back', participations_path
