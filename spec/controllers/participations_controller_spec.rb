@@ -25,15 +25,24 @@ require 'rails_helper'
 
 RSpec.describe ParticipationsController, type: :controller do
 
+  let!(:event) { create :event }
+  let!(:user)  { create :user }
+
   # This should return the minimal set of attributes required to create a valid
   # Participation. As you add validations to Participation, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      event_id: event.id,
+      user_id: user.id
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      event_id: 0,
+      user_id:  0
+    }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -49,25 +58,9 @@ RSpec.describe ParticipationsController, type: :controller do
     end
   end
 
-  describe "GET #show" do
-    it "returns a success response" do
-      participation = Participation.create! valid_attributes
-      get :show, params: {id: participation.to_param}, session: valid_session
-      expect(response).to be_success
-    end
-  end
-
   describe "GET #new" do
     it "returns a success response" do
       get :new, params: {}, session: valid_session
-      expect(response).to be_success
-    end
-  end
-
-  describe "GET #edit" do
-    it "returns a success response" do
-      participation = Participation.create! valid_attributes
-      get :edit, params: {id: participation.to_param}, session: valid_session
       expect(response).to be_success
     end
   end
@@ -89,35 +82,6 @@ RSpec.describe ParticipationsController, type: :controller do
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
         post :create, params: {participation: invalid_attributes}, session: valid_session
-        expect(response).to be_success
-      end
-    end
-  end
-
-  describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested participation" do
-        participation = Participation.create! valid_attributes
-        put :update, params: {id: participation.to_param, participation: new_attributes}, session: valid_session
-        participation.reload
-        skip("Add assertions for updated state")
-      end
-
-      it "redirects to the participation" do
-        participation = Participation.create! valid_attributes
-        put :update, params: {id: participation.to_param, participation: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(participation)
-      end
-    end
-
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'edit' template)" do
-        participation = Participation.create! valid_attributes
-        put :update, params: {id: participation.to_param, participation: invalid_attributes}, session: valid_session
         expect(response).to be_success
       end
     end

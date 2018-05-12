@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  describe 'associations' do
+    it { is_expected.to have_many :participations }
+    it { is_expected.to have_many :events }
+  end
+
   describe 'validations' do
     subject { build :user }
     it { is_expected.to validate_presence_of :nickname }
