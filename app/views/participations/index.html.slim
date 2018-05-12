@@ -7,7 +7,6 @@ table
       th User
       th
       th
-      th
 
   tbody
     - @participations.each do |participation|
@@ -15,7 +14,6 @@ table
         td = participation.event
         td = participation.user
         td = link_to 'Show', participation
-        td = link_to 'Edit', edit_participation_path(participation)
         td = link_to 'Destroy', participation, data: { confirm: 'Are you sure?' }, method: :delete
 
 br

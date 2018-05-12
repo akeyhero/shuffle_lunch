@@ -1,5 +1,5 @@
 class ParticipationsController < ApplicationController
-  before_action :set_participation, only: [:show, :edit, :update, :destroy]
+  before_action :set_participation, only: [:show, :destroy]
 
   # GET /participations
   # GET /participations.json
@@ -17,10 +17,6 @@ class ParticipationsController < ApplicationController
     @participation = Participation.new
   end
 
-  # GET /participations/1/edit
-  def edit
-  end
-
   # POST /participations
   # POST /participations.json
   def create
@@ -32,20 +28,6 @@ class ParticipationsController < ApplicationController
         format.json { render :show, status: :created, location: @participation }
       else
         format.html { render :new }
-        format.json { render json: @participation.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /participations/1
-  # PATCH/PUT /participations/1.json
-  def update
-    respond_to do |format|
-      if @participation.update(participation_params)
-        format.html { redirect_to @participation, notice: 'Participation was successfully updated.' }
-        format.json { render :show, status: :ok, location: @participation }
-      else
-        format.html { render :edit }
         format.json { render json: @participation.errors, status: :unprocessable_entity }
       end
     end
