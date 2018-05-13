@@ -9,5 +9,5 @@ table
   tbody
     - @groups.each do |group|
       tr
-        td = group.event
+        td = group.event.title
         td = link_to 'Show', group

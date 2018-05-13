@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   has_many :participations, inverse_of: :event, dependent: :destroy
   has_many :users, through: :participations, source: :user, inverse_of: :events
+  has_many :groups, inverse_of: :event, dependent: :destroy
 
   validates :title, length: { maximum: 255 }
   validates :description, length: { maximum: 65535 }
