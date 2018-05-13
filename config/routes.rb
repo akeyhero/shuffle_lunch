@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :groups
   resources :participations, only: %i(index show new create destroy)
   resources :users
   resources :events
