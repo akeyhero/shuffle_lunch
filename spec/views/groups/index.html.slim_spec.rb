@@ -1,19 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe "groups/index", type: :view do
+  let(:event) { create :event }
+
   before(:each) do
     assign(:groups, [
       Group.create!(
-        :event => nil
+        :event => event
       ),
       Group.create!(
-        :event => nil
+        :event => event
       )
     ])
   end
 
   it "renders a list of groups" do
     render
-    assert_select "tr>td", :text => nil.to_s, :count => 2
+    assert_select "tr>td", :text => event.title, :count => 2
   end
 end

@@ -8,7 +8,7 @@ RSpec.describe GroupsController, type: :routing do
     end
 
     it "routes to #new" do
-      expect(:get => "/groups/new").to route_to("groups#new")
+      expect(:get => "/groups/new").not_to route_to("groups#new")
     end
 
     it "routes to #show" do
@@ -16,23 +16,23 @@ RSpec.describe GroupsController, type: :routing do
     end
 
     it "routes to #edit" do
-      expect(:get => "/groups/1/edit").to route_to("groups#edit", :id => "1")
+      expect(:get => "/groups/1/edit").not_to route_to("groups#edit", :id => "1")
     end
 
     it "routes to #create" do
-      expect(:post => "/groups").to route_to("groups#create")
+      expect(:post => "/groups").not_to route_to("groups#create")
     end
 
     it "routes to #update via PUT" do
-      expect(:put => "/groups/1").to route_to("groups#update", :id => "1")
+      expect(:put => "/groups/1").not_to route_to("groups#update", :id => "1")
     end
 
     it "routes to #update via PATCH" do
-      expect(:patch => "/groups/1").to route_to("groups#update", :id => "1")
+      expect(:patch => "/groups/1").not_to route_to("groups#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      expect(:delete => "/groups/1").to route_to("groups#destroy", :id => "1")
+      expect(:delete => "/groups/1").not_to route_to("groups#destroy", :id => "1")
     end
 
   end
