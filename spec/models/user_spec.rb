@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   describe 'associations' do
     it { is_expected.to have_many :participations }
     it { is_expected.to have_many :events }
+    it { is_expected.to have_many :assignments }
+    it { is_expected.to have_many :groups }
   end
 
   describe 'validations' do
