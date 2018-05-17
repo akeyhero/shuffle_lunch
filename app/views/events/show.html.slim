@@ -19,6 +19,17 @@ p
   strong Description:
   = @event.description
 
+h2 Member
+- if @event.groups.present?
+  section
+    - @event.groups.each_with_index do |group, i|
+      h3 Group ##{i+1}
+      ul
+        = render group.users
+- else
+  ul
+    = render @event.users
+
 => link_to 'Edit', edit_event_path(@event)
 '|
 =< link_to 'Back', events_path
