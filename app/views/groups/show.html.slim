@@ -4,4 +4,9 @@ p
   strong Event:
   = @group.event.title
 
+h2 Member
+ul
+  - @group.users.each do |user|
+    li = user.nickname
+
 =< link_to 'Back', groups_path
