@@ -4,6 +4,18 @@ p
   strong Nickname:
   = @user.nickname
 
+- if @user.events.present?
+  h2 Events
+  ul
+    - @user.events.each do |event|
+      li
+        = event.title
+        - group = @user.group_on event
+        - if group.present?
+          | (
+          = link_to 'Assigned', group
+          | )
+
 => link_to 'Edit', edit_user_path(@user)
 '|
 =< link_to 'Back', users_path
