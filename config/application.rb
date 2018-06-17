@@ -18,7 +18,7 @@ module ShuffleLunch
 
     config.time_zone = 'Tokyo'
 
-    config.sass.preferred_syntax = :sass
+    config.assets.compile = false
 
     config.action_controller.include_all_helpers = false
   end

@@ -2,7 +2,8 @@
   "name": "shuffle_lunch",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.4"
+    "@rails/webpacker": "3.4",
+    "rails-ujs": "^5.2.0"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
