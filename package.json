@@ -3,9 +3,13 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.4",
+    "css-loader": "^1.0.0",
     "rails-ujs": "^5.2.0",
     "ts-loader": "3.5.0",
-    "typescript": "^2.9.2"
+    "typescript": "^2.9.2",
+    "vue": "^2.5.16",
+    "vue-loader": "^15.2.6",
+    "vue-template-compiler": "^2.5.16"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"

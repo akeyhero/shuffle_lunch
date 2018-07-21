@@ -1,12 +1,14 @@
 <template>
-  <div id="app">
-    <p>{{ message }}</p>
-  </div>
+  <p>{{ message }}</p>
 </template>
 
-<script>
+<script lang="ts">
+interface Data {
+  message: string
+}
+
 export default {
-  data: function () {
+  data(): Data {
     return {
       message: "Hello Vue!"
     }
