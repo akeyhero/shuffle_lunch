@@ -21,5 +21,12 @@ module ShuffleLunch
     config.assets.compile = false
 
     config.action_controller.include_all_helpers = false
+
+    config.generators do |g|
+      g.stylesheets false
+      g.javascripts false
+      g.helper      false
+      g.channel     assets: false
+    end
   end
 end
