@@ -3,15 +3,14 @@
 
 import Rails from 'rails-ujs'
 import Vue from 'vue/dist/vue.esm'
+import vueCustomElement from 'vue-custom-element'
+import 'document-register-element'
 
-import App from './components/app.vue'
+import AppOptions from './components/app.vue'
 
 Rails.start()
 
-document.addEventListener('DOMContentLoaded', () => {
-  new Vue({
-    el: '#app',
-    components: { App },
-    template: '<app></app>'
-  })
-})
+Vue.use(vueCustomElement)
+
+// 動作テスト用
+Vue.customElement('v-app', AppOptions)
