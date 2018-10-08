@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title ShuffleLunch
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_pack_tag 'application', media: 'all'
+    = javascript_pack_tag 'application', defer: true
+
+  body
+    = yield
+    / FIXME: これは Vue.js の動作テスト用です
+    v-app font-size="14pt"
+      | Hello Vue!
