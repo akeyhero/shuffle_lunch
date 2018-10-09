@@ -3,6 +3,7 @@ class Group < ApplicationRecord
 
   has_many :assignments, inverse_of: :group, dependent: :destroy
   has_many :users, through: :assignments, source: :user, inverse_of: :groups
+  has_many :messages, inverse_of: :group, dependent: :destroy
 
   validates :event, presence: true
 end

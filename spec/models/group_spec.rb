@@ -5,6 +5,7 @@ RSpec.describe Group, type: :model do
     it { is_expected.to belong_to :event }
     it { is_expected.to have_many :assignments }
     it { is_expected.to have_many :users }
+    it { is_expected.to have_many :messages }
   end
 
   describe 'validations' do

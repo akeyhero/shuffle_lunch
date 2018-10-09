@@ -6,6 +6,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_many :events }
     it { is_expected.to have_many :assignments }
     it { is_expected.to have_many :groups }
+    it { is_expected.to have_many :messages }
   end
 
   describe 'validations' do
