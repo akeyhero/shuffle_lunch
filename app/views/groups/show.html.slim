@@ -8,4 +8,11 @@ h2 Member
 ul
   = render @group.users
 
+h2 Chat
+- if @group.messages.present?
+  ul
+    = render @group.messages
+- else
+  p まだチャットがありません
+
 =< link_to 'Back', groups_path
